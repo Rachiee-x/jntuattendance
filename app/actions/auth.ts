@@ -15,8 +15,6 @@ export async function signup(prevState: any, formData: FormData) {
         return { error: "Email and password are required" };
     }
 
-    console.log('[auth.signup] process.env.DATABASE_URL=', process.env.DATABASE_URL);
-    console.log('[auth.signup] TURSO_AUTH_TOKEN present=', !!process.env.TURSO_AUTH_TOKEN);
     const existingUser = await prisma.user.findUnique({
         where: { email },
     });
@@ -52,8 +50,6 @@ export async function login(prevState: any, formData: FormData) {
         return { error: "Email and password are required" };
     }
 
-    console.log('[auth.login] process.env.DATABASE_URL=', process.env.DATABASE_URL);
-    console.log('[auth.login] TURSO_AUTH_TOKEN present=', !!process.env.TURSO_AUTH_TOKEN);
     const user = await prisma.user.findUnique({
         where: { email },
     });
