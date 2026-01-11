@@ -14,8 +14,8 @@ interface DashboardViewProps {
 
 export function DashboardView({ subjects, username }: DashboardViewProps) {
     // Calculate Overall Persistence
-    const totalAttended = subjects.reduce((acc, s) => acc + s.attended, 0);
-    const totalConducted = subjects.reduce((acc, s) => acc + s.conducted, 0);
+    const totalAttended = subjects.reduce((acc: number, s) => acc + s.attended, 0);
+    const totalConducted = subjects.reduce((acc: number, s) => acc + s.conducted, 0);
     const overallPercentage = totalConducted === 0 ? 100 : (totalAttended / totalConducted) * 100;
 
     return (
@@ -60,7 +60,7 @@ export function DashboardView({ subjects, username }: DashboardViewProps) {
 
                 {subjects.length === 0 && (
                     <div className="col-span-full py-20 text-center text-muted-foreground">
-                        No subjects added yet. Click "Add Subject" to get started.
+                        No subjects added yet. Click &quot;Add Subject&quot; to get started.
                     </div>
                 )}
             </div>

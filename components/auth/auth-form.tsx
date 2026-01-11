@@ -19,7 +19,7 @@ function SubmitButton({ isSignup }: { isSignup: boolean }) {
 }
 
 interface AuthFormProps {
-    action: (prevState: any, formData: FormData) => Promise<{ error?: string }>;
+    action: (prevState: unknown, formData: FormData) => Promise<{ error?: string }>;
     isSignup?: boolean;
 }
 

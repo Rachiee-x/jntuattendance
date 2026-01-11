@@ -41,6 +41,7 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     ({ className, variant, size, asChild = false, ...props }, ref) => {
         // If we wanted to support asChild we'd need Slot from radix-ui, 
         // but for now we'll stick to motion.button. 

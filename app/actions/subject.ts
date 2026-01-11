@@ -3,7 +3,6 @@
 import { prisma } from "@/lib/prisma";
 import { getSession } from "@/lib/auth";
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 
 export async function getSubjects() {
     const session = await getSession();
@@ -15,7 +14,7 @@ export async function getSubjects() {
     });
 }
 
-export async function addSubject(prevState: any, formData: FormData) {
+export async function addSubject(prevState: unknown, formData: FormData) {
     const session = await getSession();
     if (!session) return { error: "Unauthorized" };
 

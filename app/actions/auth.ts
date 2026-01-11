@@ -6,7 +6,7 @@ import bcrypt from "bcryptjs";
 import { encrypt } from "@/lib/auth";
 import { cookies } from "next/headers";
 
-export async function signup(prevState: any, formData: FormData) {
+export async function signup(prevState: unknown, formData: FormData) {
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
     const name = formData.get("name") as string; // Optional
@@ -42,7 +42,7 @@ export async function signup(prevState: any, formData: FormData) {
     redirect("/");
 }
 
-export async function login(prevState: any, formData: FormData) {
+export async function login(prevState: unknown, formData: FormData) {
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
 
